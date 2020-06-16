@@ -1,15 +1,27 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex, { StoreOptions } from "vuex";
 
-Vue.use(Vuex)
+import createPersistedState from "vuex-persistedstate";
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+import { user } from "./modules/user";
+import { task } from "./modules/task";
+
+Vue.use(Vuex);
+
+export interface RootState {
+  version?: string;
+}
+
+const store: StoreOptions<RootState> = {
   modules: {
-  }
-})
+    user,
+    task,
+  },
+  plugins: [
+    createPersistedState({
+      key: "State",
+    }),
+  ],
+};
+
+export default new Vuex.Store<RootState>(store);
