@@ -14,7 +14,7 @@
       </v-list>
     </v-bottom-sheet>
 
-    <v-snackbar dark v-model="showSnackbar" left>
+    <v-snackbar app dark v-model="showSnackbar" left>
       {{ snackbarContent }}
       <template v-slot:action>
         <v-btn @click="undoDeletedTasks" text color="yellow">Undo</v-btn>
