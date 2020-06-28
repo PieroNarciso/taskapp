@@ -1,7 +1,9 @@
 <template>
   <div class="todo-app">
-    <task-list></task-list>
-    <task-add color="deep-orange"></task-add>
+    <v-container>
+      <task-list></task-list>
+      <task-add color="deep-orange"></task-add>
+    </v-container>
   </div>
 </template>
 
