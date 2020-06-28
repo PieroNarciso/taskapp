@@ -9,21 +9,14 @@
         <v-card-title>{{ listName }}</v-card-title>
         <v-card-text>
           <v-form @submit.prevent="addTask">
-            <v-text-field
-              autofocus
-              v-model="task"
-              clearable
-              placeholder="New task"
-            ></v-text-field>
+            <v-text-field autofocus v-model="task" placeholder="New task"></v-text-field>
           </v-form>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
           <v-btn @click="dialog = false" text>Cancel</v-btn>
           <v-spacer></v-spacer>
-          <v-btn :disabled="!taskValid" text color="primary" @click="addTask"
-            >Add task</v-btn
-          >
+          <v-btn :disabled="!taskValid" text color="primary" @click="addTask">Add task</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
